@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block maincontent %}
+<!--Main Content Start-->
+<div class="main-content">
+  <!--Welcome Section-->
+  <section class="welcome-section">
+    <div class="container">
+      <div class="row">
+        <div class="welcome-box">
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-text">
+              <div class="sectio-title-2"> <strong>Welcome to your</strong>
+                <h2>Heart Care</h2>
+              </div>
+              <p> Welcome to Heart Care, your go-to resource for everything related to heart health and well-being. We understand that your heart is the center of your health, and we are committed to providing you with the information, resources, and support you need to keep it healthy and strong.</p>
+              <p>Our goal is to empower you to take control of your heart health and to live your life to the fullest. We believe that a healthy heart is the key to a happy and fulfilling life, and we are committed to helping you achieve that goal.
+
+              Thank you for visiting Heart Care, and we look forward to supporting you on your journey to a healthier heart.</p>
+              <strong class="signature">Henry Pattrick</strong>
+              <h6 class="designation">MS Heart Care Hospital</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-img"> <img src="{% static 'heartcare/images/welcome.jpg' %}" alt=""> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Welcome Section End-->
+
+  <!--Home Services Start-->
+  <section class="home-features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Cardio Monitoring</h3>
+            <p>Cardio monitoring is essential for detecting and diagnosing various heart conditions, including arrhythmias, atrial fibrillation, and heart attacks.</p>
+            <a href="{% url 'admin-appointment' %}">Get Free Appointment</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box selected">
+            <h3>First Aid</h3>
+            <p>The first and most important step in providing first aid for a heart attack or cardiac arrest is to call for emergency medical services.</p>
+            <a href="contact-2.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Emergency Help</h3>
+            <p><span>Monday-Friday:</span> Full Day<br>
+              <span>Satuday:</span> Full Day<br>
+              <span>Sunday:</span> 7:00am - 05:00pm<br>
+            </p>
+            <a href="#">Callfor Info: +919876543210</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Home Services End-->
+
+  <!--Services Section Start-->
+  <section class="home-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3"> <strong>Our Departments</strong>
+            <h2>Departmental Services</h2>
+          </div>
+        </div>
+
+        <!--service style 1-->
+        <div class="col-md-12">
+          <div class="service-style-1">
+            <div class="row">
+              <!--service box start-->
+              {% for service in services %}
+              <div class="col-md-3 col-sm-3">
+                <div class="service-box">
+                  <div class="ser-thumb"> <a href="{% url 'service_details' service.id %}" class="view"><i
+                        class="fa fa-heartbeat" aria-hidden="true"></i></a> <img src="{{ service.thumbnail.url }}"
+                      alt="">
+                  </div>
+                  <div class="ser-content">
+                    <h3><a href="{% url 'service_details' service.id %}">{{ service.title }}</a></h3>
+                    <p>{{ service.description|truncatewords:15 }}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              <!--service box End-->
+            </div>
+          </div>
+        </div>
+        <!--service style 1 End-->
+
+      </div>
+    </div>
+  </section>
+  <!--Services Section End-->
+
+  <!--Heart Care Start-->
+  <section class="heart-care-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3 white"> <strong>Our Core</strong>
+            <h2>Expert Services</h2>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#service-1" aria-controls="service-1" role="tab"
+                data-toggle="tab"> <i class="fa fa-graduation-cap"></i> Experienced Surgeons</a></li>
+            <li role="presentation"><a href="#service-2" aria-controls="service-2" role="tab" data-toggle="tab"> <i
+                  class="fa fa-heartbeat"></i> Special Treatments</a></li>
+            <li role="presentation"><a href="#service-3" aria-controls="service-3" role="tab" data-toggle="tab"> <i
+                  class="fa fa-cloud"></i> Comfort Environment</a></li>
+            <li role="presentation"><a href="#service-4" aria-controls="service-4" role="tab" data-toggle="tab"> <i
+                  class="fa fa-user-md"></i> Talented Cardiologist</a></li>
+            <li role="presentation"><a href="#service-5" aria-controls="service-5" role="tab" data-toggle="tab"> <i
+                  class="fa fa-medkit"></i> High Tech Equipments</a></li>
+            <li role="presentation"><a href="#service-6" aria-controls="service-6" role="tab" data-toggle="tab"> <i
+                  class="fa fa-umbrella"></i> Personalized Care</a></li>
+          </ul>
+        </div>
+        <div class="col-md-7 col-sm-7">
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="service-1">
+              <div class="ser-tab-text">
+                <h3>Experienced Surgeons</h3>
+                <p> <i class="fa fa-graduation-cap"></i> When it comes to cardiac surgery, the availability of experienced and qualified cardiac surgeons is essential for patients who need specialized care. It's important for healthcare websites to provide information and resources to help patients find experienced cardiac surgeons in their area. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Patients should be encouraged to ask questions and get a second opinion if necessary to ensure they receive the best possible care.</li>
+                  <li><i class="fa fa-check"></i> Include information about national and international organizations that can help patients find qualified cardiac surgeons.</li>
+                  <li><i class="fa fa-check"></i> Highlight the qualifications and experience of the cardiac surgeons in the area, including their specialties, certifications, and years of experience.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-2">
+              <div class="ser-tab-text">
+                <h3>Special Treatments</h3>
+                <p> <i class="fa fa-heartbeat"></i> There are several special treatments available for heart care, depending on the patient's specific condition. Some of these treatments include: </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Interventional cardiology - This involves minimally invasive procedures, such as angioplasty and stenting, to treat blockages in the arteries that supply blood to the heart.</li>
+                  <li><i class="fa fa-check"></i> Cardiovascular surgery - This includes a wide range of surgical procedures, such as coronary artery bypass grafting, heart valve repair or replacement, and heart transplant.</li>
+                  <li><i class="fa fa-check"></i> Structural heart disease - This includes repairing or replacing damaged heart structures, such as the mitral or aortic valve, using minimally invasive techniques.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-3">
+              <div class="ser-tab-text">
+                <h3>Comfort Environment</h3>
+                <p> <i class="fa fa-cloud"></i> Creating a comfortable and supportive environment for heart patients is crucial for their overall well-being and recovery. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Comfortable accommodations.</li>
+                  <li><i class="fa fa-check"></i> Supportive staff.</li>
+                  <li><i class="fa fa-check"></i> Emotional support.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-4">
+              <div class="ser-tab-text">
+                <h3>Talented Cardiologist</h3>
+                <p> <i class="fa fa-user-md"></i> It's important for patients to do their research and find a cardiologist who is qualified, experienced, and has a good reputation. A talented and knowledgeable cardiologist can make a significant difference in the care and treatment of heart disease.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Online reviews and ratings - Online reviews and ratings of cardiologists can provide patients with insights into the quality of care provided by a particular physician.</li>
+                  <li><i class="fa fa-check"></i> Personal recommendations - Patients can ask friends and family members for personal recommendations of cardiologists they have had positive experiences with.</li>
+                  <li><i class="fa fa-check"></i> Check for specialized expertise - If you have a specific heart condition or concern, look for cardiologists who specialize in treating that condition.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-5">
+              <div class="ser-tab-text">
+                <h3>High Tech Equipments</h3>
+                <p> <i class="fa fa-medkit"></i> The field of cardiology is constantly evolving, and there are several cutting-edge high-tech techniques that are being used for heart care.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> 3D printing - This technology can create a 3D model of a patient's heart, allowing doctors to plan and practice complex procedures before performing them on the patient.</li>
+                  <li><i class="fa fa-check"></i> Artificial intelligence (AI) - AI can be used to analyze large amounts of data to help predict and diagnose heart conditions, and to help doctors create personalized treatment plans.</li>
+                  <li><i class="fa fa-check"></i> Wearable technology - Wearable devices, such as smartwatches and fitness trackers, can monitor a patient's heart rate, rhythm, and activity levels, providing valuable information.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-6">
+              <div class="ser-tab-text">
+                <h3>Personalized Care</h3>
+                <p> <i class="fa fa-umbrella"></i> Personalized care is an important aspect of heart care because every patient's condition is unique, and their treatment plan should be tailored to their individual needs.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Individualized treatment plans - Treatment plans will be tailored to each patient's specific condition, taking into account their age, overall health, and personal preferences.</li>
+                  <li><i class="fa fa-check"></i> Comprehensive evaluation - Each patient will receive a thorough evaluation to assess their specific heart condition, medical history, lifestyle, and other factors that may impact their treatment plan.</li>
+                  <li><i class="fa fa-check"></i> Patient-centered communication - Healthcare professionals will communicate with patients in a clear and respectful manner, listening to their concerns and addressing their questions..</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Heart Care End-->
+
+
+  <!--Team Start-->
+  <section class="team">
+    <div class="container">
+      <div class="row">
+        <div class="section-title-3"> <strong>Our Team</strong>
+          <h2>Expert Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for doctor in experts|slice:':4' %}
+        <div class="col-md-3 col-sm-6">
+          <div class="team-box mb50">
+            <div class="team-thumb"> <a href="{% url 'doctor_details' doctor.id %}" class="view"><i class="fa fa-Heart"
+                  aria-hidden="true"></i></a> <img src="{{ doctor.picture.url }}" alt=""></div>
+            <div class="team-text">
+              <h5><a href="{% url 'doctor_details' doctor.id %}">{{ doctor.name }}</a></h5>
+              <strong>{{ doctor.speciality }}</strong>
+              <ul class="team-social">
+                {% if doctor.twitter %}
+                <li><a class="tw" href="{{ doctor.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                {% endif %}
+                {% if doctor.facebook %}
+                <li><a class="fb" href="{{ doctor.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                {% endif %}
+                {% if doctor.instagram %}
+                <li><a class="insta" href="{{ doctor.instagram }}"><i class="fa fa-instagram"
+                      aria-hidden="true"></i></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--Team End-->
+
+
+  <!--Testimonials + Faqs Start-->
+  <section class="testi-faq">
+    <div class="container">
+      <div class="row">
+
+        <!--Testimonials Start-->
+        <div class="col-md-6">
+          <div class="home-testimonials">
+            <div class="sectio-title-2"> <strong>Read What Says Our</strong>
+              <h2>Happy Patients</h2>
+            </div>
+            <div id="testimonial-slider" class="owl-carousel owl-theme">
+
+              <!--Slider Start-->
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser.jpg' %}" alt=""> <strong>Anna
+                      Anderson</strong>
+                    <i>A heart patient</i> </div>
+                  <div class="test-text">
+                    <p>"I was impressed with the comprehensive information available on the website. It helped me understand my condition better and make informed decisions about my treatment options."
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser-2.jpg' %}" alt=""> <strong>Anna
+                      Anderson</strong>
+                    <i>A heart patient</i> </div>
+                  <div class="test-text">
+                    <p>"The website provided useful resources for managing my condition, such as tips for healthy eating and exercise, which helped me stay on track with my recovery."
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser.jpg' %}" alt=""> <strong>Anna
+                      Anderson</strong>
+                    <i>A heart patient</i> </div>
+                  <div class="test-text">
+                    <p>"I had a great experience with the high-tech equipment used during my procedure. It was reassuring to know that the latest technology was being used to improve my outcomes."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!--Slider End-->
+
+            </div>
+          </div>
+        </div>
+        <!--Testimonials End-->
+
+        <!--FAQ Start-->
+        <div class="col-md-6">
+          <div class="home-faq">
+            <div class="sectio-title-2"> <strong>Feel Free For</strong>
+              <h2>Any FAQ’s</h2>
+            </div>
+            <div class="faqs">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> How much you charge
+                        for consultancy </a> </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body"> It is best to check with the specific healthcare facility or physician to determine their consultation fee for outpatients. Some healthcare providers may also accept insurance, so it is important to check with your insurance provider to see if the consultation fee is covered. </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What kind of patients do you treat? </a> </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body"> There are many other types of cardiac issues that patients may experience. It is important for patients to receive a thorough evaluation and appropriate analysis before treatment from a qualified healthcare provider. </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree"> Where does my refering Cardiologist go? </a> </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="headingThree">
+                    <div class="panel-body"> Our commercialization strategy involves a rapid development of
+                      treatments for both rotator cuff injuries in the shoulder and meniscus injuries of the knee
+                      joint, with an initial focus on the highly developed. </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FAQ End-->
+
+      </div>
+    </div>
+  </section>
+  <!--Testimonials + Faqs End-->
+
+</div>
+<!--Main Content End-->
+{% endblock maincontent %}

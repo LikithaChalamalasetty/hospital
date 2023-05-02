@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!--
+developed By : sumit kumar
+facebook : fb.com/sumit.luv
+youtube : youtube.com/lazycoders
+-->
+
+{% block content %}
+<style>
+  p{
+      text-align: center;
+
+    }
+</style>
+<br>
+<br>
+
+<div class="jumbotron" style="margin-bottom:0px;">
+  <br>
+  <br>
+  <h1 class="display-4" style="text-align:center;">Hello, Patient</h1>
+  <br>
+  <p class="lead">Welcome to Hospital Management System.</p>
+  <br>
+  <hr class="my-4">
+  <p>You can access various features after Login/SignUp.</p>
+  <p class="lead">
+    <br>
+    <a class="btn btn-primary btn-lg" href="/patientsignup" role="button">Register Your Account</a>
+    <a class="btn btn-primary btn-lg" href="/patientlogin" role="button">Login</a>
+  </p>
+</div>
+
+{% endblock content %}

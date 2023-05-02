@@ -1,0 +1,70 @@
+{% load static %}
+<footer class="footer">
+  <div class="footer-widgets">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="widget"> <img class="ft-logo" src="{% static 'heartcare/images/footer-logo.png' %}" alt="">
+            <p>Thank you for visiting our heart care website. We hope you found the information and resources provided here helpful in understanding and taking care of your heart health.Please take a moment to explore our website and learn more about our services and resources. 
+            Thank you again for visiting our website, and we wish you all the best in your heart health journey. </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>Our Services</h3>
+            <ul>
+              {% for service in services|slice:':8' %}
+              <li><a href="{% url 'service_details' service.id %}"><i class="fa fa-arrow-right"></i>
+                  {{service.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>Expert Doctors</h3>
+            <ul>
+              {% for doctor in experts|slice:':8' %}
+              <li><a href="{% url 'doctor_details' doctor.id %}"><i class="fa fa-arrow-right"></i>{{ doctor.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>Contact us</h3>
+            <address>
+              <ul>
+                <li> <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>Main Branch:</strong></span>Richardson, Dallas</li>
+                <li> <span class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>Call us Anytime at:</strong> +919876543210</span> </li>
+                <li> <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>For Inquiry:</strong> info@heartcare.com</span> </li>
+                <li> <span class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>Our Timings:</strong> Mon-Sat: 9:00am-7:00pm</span> </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-cr">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-social"> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"><i
+                class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus"
+                aria-hidden="true"></i></a> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a
+              href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p><strong>HeartCare</strong> © {% now 'Y' %}, All Rights Reserved, Design & Developed By PB.Siddhartha</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
